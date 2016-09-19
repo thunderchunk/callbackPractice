@@ -23,7 +23,9 @@ and what you should write is the sayHi function that makes the code above work,
 */
 
 
-
+function first(arr, cB){
+    cB(arr[0]);
+  }
   //Code Here for first
   
 
@@ -36,7 +38,9 @@ first(names, function(firstName){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+function last(arr, cB){
+  cB(arr[arr.length - 1]);
+}
 
 
   //Code Here for last
@@ -52,7 +56,10 @@ last(names, function(lastName){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+function multiply(x, y, cB){
+  cB(x * y);
 
+ } 
 
 
 
@@ -69,7 +76,12 @@ multiply(4, 3, function(answer){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-
+function contains(arr, t, cb){
+  if (arr.indexOf(t != -1)){
+    cb(true);
+  }
+   cb(false);
+}
 
 
   //Code Here for contains
@@ -89,7 +101,15 @@ contains(names, 'Colt', function(result){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-
+function uniq(arr, cb){
+  var new_arr = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (new_arr.indexOf(arr[i]) === -1){
+      new_arr.push(arr[i]);
+    }
+  }
+  cb(new_arr);
+}
 
     //Code Here for uniq
 
@@ -103,7 +123,17 @@ uniq(names, function(uniqArr){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
+function each(arr, cB){
+    var indx ;
+    var nm ;
+for(var i = 0; i < arr.length; i++){
+    indx = i;
+    nm = arr[i];
+    cB(nm, indx);
+    }
 
+    
+}
 
 
     //Code Here for each
@@ -118,7 +148,14 @@ each(names, function(item, indice){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+function getUserById(users, iD, cB){
+  for(var i=0; i< users.length; i++){
+    var x = users[i];
+    if (x.id === iD){
+      cB(x)
+    }
+  }
+}
 
 
 
